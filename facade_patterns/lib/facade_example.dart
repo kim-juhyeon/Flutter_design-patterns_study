@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   bool _gamingModeOn = false;
   bool _streamingModeOn = false;
 
+//_isAnyModeOn 부울값들(시네마,게이밍,스트림모드)을 결합하여 켜져 있는지 여부결정
   bool get _isAnyModeOn =>
       _homeCinemaModeOn || _gamingModeOn || _streamingModeOn;
 
@@ -93,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(_smartHomeState.audioSystemOn
                   ? Icons.speaker
-                  : Icons.speaker_group),
+                  : Icons.speaker_notes_off),
               title: const Text('Audio System'),
             ),
             ListTile(
