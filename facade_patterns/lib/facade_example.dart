@@ -13,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   final SmartHomeState _smartHomeState = SmartHomeState();
   final SmartHomeFacade _smartHomeFacade = SmartHomeFacade();
 
+//초기값으로 아무것도 선택 되지 않게 설정해줍니다.
   bool _homeCinemaModeOn = false;
   bool _gamingModeOn = false;
   bool _streamingModeOn = false;
