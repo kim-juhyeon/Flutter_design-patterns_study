@@ -8,20 +8,20 @@ class GamingFacade {
   final CameraApi _cameraApi = CameraApi();
 
   void startGaming(SmartHomeState smartHomeState) {
-    smartHomeState.gamingConsoleOn = _playstationApi.turnOn();
+    //   smartHomeState.gamingConsoleOn = _playstationApi.turnOn();
   }
 
   void stopGaming(SmartHomeState smartHomeState) {
-    smartHomeState.gamingConsoleOn = _playstationApi.turnOff();
+//    smartHomeState.gamingConsoleOn = _playstationApi.turnOff();
   }
 
   void startStreaming(SmartHomeState smartHomeState) {
-    smartHomeState.streamingCameraOn = _cameraApi.turnCameraOn();
+    //  smartHomeState.streamingCameraOn = _cameraApi.turnCameraOn();
     startGaming(smartHomeState);
   }
 
   void stopStreaming(SmartHomeState smartHomeState) {
-    smartHomeState.streamingCameraOn = _cameraApi.turnCameraOff();
+    //   smartHomeState.streamingCameraOn = _cameraApi.turnCameraOff();
     stopGaming(smartHomeState);
   }
 }

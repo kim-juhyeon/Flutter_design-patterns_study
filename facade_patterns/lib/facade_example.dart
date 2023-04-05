@@ -19,12 +19,17 @@ class _HomePageState extends State<HomePage> {
   bool _streamingModeOn = false;
 
 //_isAnyModeOn 부울값들(시네마,게이밍,스트림모드)을 결합하여 켜져 있는지 여부결정
+// switcher가
   bool get _isAnyModeOn =>
       _homeCinemaModeOn || _gamingModeOn || _streamingModeOn;
+/*"비활성"에서 "활성" 수명 주기 상태로 전환합니다.
 
+프레임워크는 이전에 비활성화된 요소가 트리에 다시 통합되었을 때 이 메서드를 호출합니다. 
+프레임워크는 요소가 처음 활성화될 때(즉, "초기" 수명 주기 상태에서) 이 메서드를 호출하지 않습니다. 
+대신 프레임워크는 해당 상황에서 마운트를 호출합니다 . */
   void _changeHomeCinemaMode(bool activated) {
     if (activated) {
-      _smartHomeFacade.startMovie(_smartHomeState, 'Movie title');
+      _smartHomeFacade.startMovie(_smartHomeState, movieTitle: 'mo');
     } else {
       _smartHomeFacade.stopMovie(_smartHomeState);
     }
@@ -99,8 +104,8 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               leading: Icon(_smartHomeState.lightsOn
-                  ? Icons.lightbulb
-                  : Icons.lightbulb_outline),
+                  ? Icons.tips_and_updates
+                  : Icons.lightbulb),
               title: const Text('Lights'),
             ),
           ],

@@ -12,7 +12,7 @@ class SmartHomeFacade {
   //final NetflixApi _netflixApi = NetflixApi();
   final SmartHomeApi _smartHomeApi = SmartHomeApi();
 
-  void startMovie(SmartHomeState smartHomeState, String movieTitle) {
+  void startMovie(SmartHomeState smartHomeState, {String? movieTitle}) {
     smartHomeState.lightsOn = _smartHomeApi.turnLightsOff();
     smartHomeState.tvOn = _tvApi.turnOn();
     smartHomeState.audioSystemOn = _audioApi.turnSpeakersOn();
